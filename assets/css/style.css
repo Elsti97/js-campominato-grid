@@ -1,0 +1,19 @@
+main{
+  background-color: #7FFFD4;
+}
+
+.width-80{
+  width: 80%;
+  margin: 0 auto;
+}
+
+.quadrato{
+  width: calc(100% / 10);
+  aspect-ratio: 1/1;
+  border: 1px solid black;
+  display: inline-block;
+}
+
+.active{
+  background-color: red;
+}
