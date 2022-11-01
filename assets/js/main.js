@@ -11,22 +11,35 @@
 const griglia = document.getElementById("griglia");
 console.log(griglia);
 
-function creazioneQuadrato(){
-  const div = document.createElement("div");
-  div.classList.add("quadrato")
-  return div;
+function play(){
+  document.getElementById("griglia").innerHTML = '';
+
+
+
+  function creazioneQuadrato(){
+    const div = document.createElement("div");
+    div.classList.add("quadrato");
+    return div;
+  }
+
+  console.log(creazioneQuadrato());
+
+  let somma = 0;
+
+  for(let i = 1; i<= 100; i++){
+    let elementoCorrente = creazioneQuadrato();
+    elementoCorrente.innerHTML += i;
+    console.log(elementoCorrente);
+
+    elementoCorrente.addEventListener('click', function(){
+      console.log(this);
+      this.classList.toggle('active');
+    })
+
+    griglia.append(elementoCorrente);
+  }
+
+
+
 }
 
-console.log(creazioneQuadrato());
-
-for(let i = 0; i<100; i++){
-  let elementoCorrente = creazioneQuadrato();
-  console.log(elementoCorrente);
-
-  elementoCorrente.addEventListener('click', function(){
-    console.log(this);
-    this.classList.toggle('active');
-  })
-
-  griglia.append(elementoCorrente);
-}
